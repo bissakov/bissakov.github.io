@@ -1,0 +1,84 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    min-height: 100%;  
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-image: url("background.png");
+}
+
+body {
+    display: grid;
+    place-content: center;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+body > * {
+    font-family: 'Arvo', serif;
+}
+
+.wrapper {
+    display: grid;
+    height: 100%;
+    /* grid-template-columns: auto auto auto auto auto auto auto auto auto; */
+    grid-template-areas: 'text text text text text text text text text';
+    grid-template-rows: 30% 70%;
+    gap: 1rem 2rem;
+    place-content: center;
+    place-items: center;
+}
+
+.wrapper > * {
+    margin: 0;
+    font-size: xx-large;
+    width: 5vw;
+    height: 10vh;
+}
+
+.labelText {
+    color: white;
+    font-size: 3rem;
+    letter-spacing: .2em;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(148, 116, 116);
+    grid-area: text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    transition: all .07s;
+    border-radius: 10%;
+    border: 0px;
+    background-color: rgba(192, 192, 192, 0.3);
+    border: .1em solid rgba(192, 192, 192, 0.65);
+    color:white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(60, 66, 73);;
+    font-family: 'Arvo', serif;
+    font-size: 3rem;
+}
+
+.button:hover {
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgb(60, 66, 73);
+    background-color: rgba(192, 192, 192, .8);
+    border: 0;
+}
+
+.active, .button:active {
+    transform: translate(5%, 10%);
+    background-color: rgba(75, 75, 75, 0.6);
+    border: .1em solid rgb(148, 116, 116);
+    inset: 0rem;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgb(148, 116, 116);
+    font-size: 3.5rem;
+}

@@ -1,0 +1,7 @@
+.vscode/
+node_modules/
+package*.json
+run-http-server.ps1
+sounds/
+background.png
+favicon.png
