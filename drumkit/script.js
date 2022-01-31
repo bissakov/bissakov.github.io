@@ -32,7 +32,7 @@ function main() {
         buttonArr[i].addEventListener('click', () => {
             audioArr[i].pause();
             audioArr[i].currentTime = 0;
-            audioArr[i].volume = .5;
+            audioArr[i].volume = .3;
             audioArr[i].play();
 
             label.innerHTML = `${audioArr[i].id.toUpperCase()}`;
