@@ -10,7 +10,7 @@ html, body {
 }
 
 html {
-    background-image: url("background.png");
+    background-image: url("https://raw.githubusercontent.com/wesbos/JavaScript30/master/01%20-%20JavaScript%20Drum%20Kit/background.jpg");
 }
 
 body {
@@ -81,4 +81,5 @@ body > * {
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: rgb(148, 116, 116);
     font-size: 3.5rem;
+    scale: 1.1;
 }
