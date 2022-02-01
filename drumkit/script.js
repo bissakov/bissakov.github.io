@@ -1,3 +1,8 @@
+function removeClass(event) {
+    if (event.propertyName !== 'transform') return;
+    event.target.classList.remove('active');
+}
+
 function main() {
     const keyArr = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
     const buttonArr = document.getElementsByClassName('button');
@@ -5,7 +10,6 @@ function main() {
     const label = document.querySelector('.labelText');
 
     document.addEventListener('keydown', event => {
-        event.preventDefault();
         for (let i = 0; i < keyArr.length; i++) {
             if (event.key === keyArr[i]) {
                 buttonArr[i].click();
@@ -13,20 +17,12 @@ function main() {
             } else {
                 buttonArr[i].classList.remove('active');
             }
-            
         }
     });
 
-    document.addEventListener('keyup', event => {
-        event.preventDefault();
-        for (let i = 0; i < keyArr.length; i++) {
-            if (event.key === keyArr[i]) {
-                setTimeout(() => {
-                    buttonArr[i].classList.remove('active');
-                }, 25);
-            }
-        }
-    });
+    for (let i = 0; i < buttonArr.length; i++) {
+        buttonArr[i].addEventListener('transitionend', removeClass);
+    }
 
     for (let i = 0; i < buttonArr.length; i++) {
         buttonArr[i].addEventListener('click', () => {
